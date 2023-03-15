@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\ChoiceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +21,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/quiz', function () {
-    return view('quiz');
-});
+Route::get('/quiz', [QuizController::class, 'index']);
+// Route::get('/quiz', 'QuizController@index');
+
+Route::resource('questions', QuestionController::class)->middleware(['auth', 'verified']);
+// Route::resource('choices', ChoiceController::class);
+// Route::post('questions/update', QuestionController::class);
+
 
 
 Route::get('/dashboard', function () {

@@ -49,10 +49,9 @@ class QuestionController extends Controller
         $question = new Question;
 
         $question->content = $request->input('content');
-        // $question->image = $request->file('image');
+    
         $question->image = $fileName;
-        // $file_name = $request->file('image')->getClientOriginalName();
-        // $request->file('image')->storeAs('public/' . 'img',$file_name);
+        
         $question->supplement = $request->input('supplement');
 
         $question->save();
@@ -103,12 +102,12 @@ class QuestionController extends Controller
         //     $file->storeAs('public/img',$fileName);
         // }
 
-        // $file = $request->file('image');
-        // $fileName = $file->getClientOriginalName();
-        // $file->storeAs('public/img' ,$fileName);
+        $file = $request->file('image');
+        $fileName = $file->getClientOriginalName();
+        $file->storeAs('public/img' ,$fileName);
 
         $questions->content = $request->input('content');
-        // $questions->image = $fileName;
+        $questions->image = $fileName;
         $questions->supplement = $request->input('supplement');
 
         //DBに保存

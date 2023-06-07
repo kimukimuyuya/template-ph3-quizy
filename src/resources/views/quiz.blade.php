@@ -93,7 +93,7 @@
                     <section class="p-quiz-box js-quiz" data-quiz="${questionNumber}">
                         <div class="p-quiz-box__question">
                             <h2 class="p-quiz-box__question__title">
-                                <span class="p-quiz-box__label">Q{{ $question->id }}</span>
+                                <span class="p-quiz-box__label">Q{{ $loop->iteration }}</span>
                                 <span class="p-quiz-box__question__title__text">{{ $question->content }}</span>
                             </h2>
                             <figure class="p-quiz-box__question__image">

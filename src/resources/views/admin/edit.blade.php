@@ -12,7 +12,7 @@
                     <div>
                         <h1>編集</h1>
 
-                        <form method="POST" action="{{route('questions.update',['question' =>$questions->id])}}">
+                        <form method="POST" action="{{route('questions.update',['question' =>$questions->id])}}" enctype="multipart/form-data">
                             @method('patch')
                             @csrf
 
@@ -39,7 +39,6 @@
                 </div>
             </div>
             <a href="{{ route('questions.create') }}">{{ __('新規作成') }}</a>
-            <a href="{{route('questions.index',['id'=>$questions->id])}}">{{ __('詳細に戻る') }}</a>
         </div>
     </div>
 </x-app-layout>

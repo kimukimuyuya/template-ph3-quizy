@@ -28,6 +28,8 @@ Route::resource('questions', QuestionController::class)->middleware(['auth', 've
 // Route::resource('choices', ChoiceController::class);
 // Route::post('questions/update', QuestionController::class);
 
+Route::resource('choices/{id}/choice', ChoiceController::class)->middleware(['auth', 'verified']);
+
 
 
 Route::get('/dashboard', function () {

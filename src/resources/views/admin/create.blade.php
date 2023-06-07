@@ -12,6 +12,7 @@
                     <div>
                         <h1>新規作成</h1>
 
+                        {{-- <form method="POST" action="{{route('questions.store')}}" enctype="multipart/form-data"> --}}
                         <form method="POST" action="{{route('questions.store')}}" enctype="multipart/form-data">
                             @csrf
 
